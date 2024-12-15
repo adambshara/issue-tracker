@@ -33,6 +33,9 @@ const NavBar = () => {
         ))}
       </ul>
     </nav>
+    // {`${
+    //   link.href === currentPath ? "text-zinc-900" : "text-zinc-500"
+    // } hover:text-zinc-800 transition-colors`}
   );
 };
 
