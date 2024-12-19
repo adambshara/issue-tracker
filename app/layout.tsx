@@ -6,7 +6,10 @@ import { Inter } from "next/font/google";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 import NavBar from "./NavBar";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +27,6 @@ export default function RootLayout({
         <Theme accentColor="violet" radius="full">
           <NavBar />
           <main className="p-5">{children}</main>
-          {/* <ThemePanel /> */}
         </Theme>
       </body>
     </html>
