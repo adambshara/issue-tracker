@@ -1,6 +1,7 @@
 import prisma from "@/prisma/client";
-import { Button, Table } from "@radix-ui/themes";
-import Link from "next/link";
+import { Table } from "@radix-ui/themes";
+import Link from "../components/Link";
+// import Link from "next/link";
 import React from "react";
 import IssueStatusBadge from "../components/IssueStatusBadge";
 import delay from "delay";
@@ -46,5 +47,6 @@ const IssuesPage = async () => {
     </div>
   );
 };
-
+//if something bad happened for the link you should uncomment
+//the Link from next/link and remove the one from components/Link
 export default IssuesPage;
