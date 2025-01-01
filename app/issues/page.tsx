@@ -48,4 +48,7 @@ const IssuesPage = async () => {
 };
 //if something bad happened for the link you should uncomment
 //the Link from next/link and remove the one from components/Link
+
+export const dynamic = "force-dynamic";
+
 export default IssuesPage;
