@@ -5,13 +5,15 @@ import React from "react";
 
 import { Skeleton } from "@/app/components";
 
-const LoadingNewIssuePage = () => {
-  return (
-    <Box className="max-w-xl">
-      <Skeleton />
-      <Skeleton height="20rem" />
-    </Box>
-  );
-};
+import IssueFormSkeleton from "../_components/IssueFormSkeleton";
 
-export default LoadingNewIssuePage;
+// const LoadingNewIssuePage = () => {
+//   return (
+//     <Box className="max-w-xl">
+//       <Skeleton />
+//       <Skeleton height="20rem" />
+//     </Box>
+//   );
+// };
+
+export default IssueFormSkeleton;

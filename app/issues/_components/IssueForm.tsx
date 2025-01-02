@@ -1,6 +1,5 @@
 "use client";
 import ErrorMessage from "@/app/components/ErrorMessage";
-import dynamic from "next/dynamic";
 import Spinner from "@/app/components/Spinner";
 import { issueSchema } from "@/app/validationSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,16 +10,17 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 // import SimpleMDE from "react-simplemde-editor";
-import { z } from "zod";
 import { Issue } from "@prisma/client";
+import SimpleMDE from "react-simplemde-editor";
+import { z } from "zod";
 
 // interface IssueFormData {
 //   title: string;
 //   description: string;
 // }
-const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
-  ssr: false,
-});
+// const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+//   ssr: false,
+// });
 
 type IssueFormData = z.infer<typeof issueSchema>;
 interface Props {
