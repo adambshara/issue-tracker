@@ -19,6 +19,7 @@ const AssigneeSelect = () => {
   });
   if (isLoading) return <Skeleton />;
   if (error) return null;
+  //We fetched data using React Query
   //useQuery would do the same thing as useState and useEffect
   // const [users, setUsers] = useState<User[]>([]);
   // useEffect(() => {
