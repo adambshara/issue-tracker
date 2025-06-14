@@ -6,7 +6,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "@/app/components";
 
-const AssigneeSelect = () => {
+const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   const {
     data: users,
     error,
@@ -31,12 +31,19 @@ const AssigneeSelect = () => {
   // }, []);
   return (
     <>
-      <Select.Root>
+      <Select.Root
+        defaultValue={issue.assignedToUserId || ""}
+        onValueChange={(userId) => {
+          axios.patch("/api/issues/" + issue.id, {
+            assignedToUserId: userId || null,
+          });
+        }}
+      >
         <Select.Trigger placeholder="Assign..." />
         <Select.Content>
           <Select.Group>
             <Select.Label>Suggestions</Select.Label>
-
+            <Select.Item value=" ">Unassigned</Select.Item>
             {users?.map((user) => (
               <Select.Item key={user.id} value={user.id}>
                 {user.name}
