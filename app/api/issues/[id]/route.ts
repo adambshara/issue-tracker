@@ -16,6 +16,7 @@ export async function PATCH(
   const validation = patchIssueSchema.safeParse(body);
   if (!validation.success)
     return NextResponse.json(validation.error.format(), { status: 400 });
+
   const { assignedToUserId, title, description } = body;
   if (assignedToUserId) {
     const user = await prisma.user.findUnique({
@@ -30,14 +31,6 @@ export async function PATCH(
   if (!issue)
     return NextResponse.json({ error: "Invalid issue" }, { status: 404 });
 
-  // const updatedIssue = await prisma.issue.update({
-  //   where: { id: issue.id },
-  //   data: {
-  //     title: body.title,
-  //     description: body.description,
-  //     assignedToUserId: body.assignedToUserId,
-  //   },
-  // });
   const updatedIssue = await prisma.issue.update({
     where: { id: issue.id },
     data: {
