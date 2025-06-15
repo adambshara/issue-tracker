@@ -4,7 +4,7 @@ import { Link, IssueStatusBadge } from "@/app/components";
 // import Link from "../components/Link";
 // import Link from "next/link";
 // import IssueStatusBadge from "../components/IssueStatusBadge";
-import IssueActions from "./IssueActions";
+import IssueActions from "./list/IssueActions";
 
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
